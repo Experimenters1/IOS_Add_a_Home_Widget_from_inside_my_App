@@ -9,6 +9,7 @@ hãy nhấn đồng thời tổ hợp phím **Command + Control + Space**.
 ![image](https://github.com/Experimenters1/IOS_Add_a_Home_Widget_from_inside_my_App/assets/64000769/d4af2f49-f373-4515-a1d1-4d078cc60dd0)
 
 # 
+![Screenshot 2023-09-22 at 5 18 40 PM](https://github.com/Experimenters1/IOS_Add_a_Home_Widget_from_inside_my_App/assets/64000769/a75e36e2-8fc8-4d30-b372-019db82745a7)
 ```swift
 //
 //  MonthlyWidget.swift
@@ -138,4 +139,4 @@ struct MonthlyWidget_Previews: PreviewProvider {
 
 ```
 
-![Screenshot 2023-09-22 at 5 18 40 PM](https://github.com/Experimenters1/IOS_Add_a_Home_Widget_from_inside_my_App/assets/64000769/a75e36e2-8fc8-4d30-b372-019db82745a7)
+
