@@ -159,5 +159,37 @@ Lưu ý rằng chúng tôi sẽ sử dụng **providerInfo** để giữ thông 
 
 Sau khi tạo **Timeline Entry (mục nhập dòng thời gian)**, chúng ta có thể tiến hành triển khai giao diện người dùng của Widget. Về cơ bản nó chỉ là một Chế độ xem SwiftUI.
 
+```swift
+struct MonthlyWidgetEntryView : View {
+    var entry: Provider.Entry
 
+    var body: some View {
+    
+        
+        VStack {
+            HStack (spacing: 9){
+                Image(systemName: "calendar.circle.fill") // Thay thế "calendar.circle.fill" bằng biểu tượng mong muốn
+                    .font(.system(size: 24))
+                Text(entry.date, style: .time)
+                    .padding(.bottom, 1) // Khoảng cách giữa Top Text và Bottom Text
+                Spacer()
+            }
+            .padding()
+            HStack {
+                Text(entry.date, formatter: dateFormatter)
+            }
+            .padding(3)
+        }
+     
+   
+    }
+    // Định nghĩa một dateFormatter cho ngày tháng
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter
+    }
+}
 
+```
