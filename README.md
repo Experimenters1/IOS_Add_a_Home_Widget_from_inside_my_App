@@ -253,3 +253,26 @@ struct Provider: IntentTimelineProvider {
 }
 
 ```
+### The Widget Configuration (Cấu hình tiện ích)
+
+```swift
+struct MonthlyWidget: Widget {
+    let kind: String = "MonthlyWidget"
+
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+            MonthlyWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
+        .supportedFamilies([.systemSmall]) //widget chỉ hỗ trợ gia đình nhỏ (small widget)
+    }
+}
+
+struct MonthlyWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        MonthlyWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+    }
+}
+```
