@@ -157,7 +157,7 @@ Lưu ý rằng chúng tôi sẽ sử dụng **providerInfo** để giữ thông 
 ### The Widget View  (Chế độ xem tiện ích)
 
 
-
+Sau khi tạo **Timeline Entry (mục nhập dòng thời gian)**, chúng ta có thể tiến hành triển khai giao diện người dùng của Widget. Về cơ bản nó chỉ là một Chế độ xem SwiftUI.
 
 
 
