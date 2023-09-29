@@ -154,3 +154,10 @@ struct SimpleEntry: TimelineEntry {
 ```
 Lưu ý rằng chúng tôi sẽ sử dụng **providerInfo** để giữ thông tin liên quan đến nhà cung cấp dòng thời gian và hiển thị thông tin đó trên tiện ích - sẽ nói thêm về điều đó sau.
 
+### The Widget View  (Chế độ xem tiện ích)
+
+
+
+
+
+
