@@ -140,6 +140,17 @@ struct MonthlyWidget_Previews: PreviewProvider {
 ```
 
 ## Creating a Widget
+### The Timeline Entry (Mục nhập dòng thời gian)
 
+Bạn có thể tưởng tượng mục nhập dòng thời gian là đối tượng mô hình của chế độ xem tiện ích. Nó ít nhất phải bao gồm một **date** tham số. Bất kỳ tham số nào khác cũng có thể được thêm vào mục nhập dòng thời gian dựa trên nhu cầu của chúng ta.
 
+```swift
+struct SimpleEntry: TimelineEntry {
+    let date: Date
+    let configuration: ConfigurationIntent
+    let providerInfo: String
+}
+
+```
+Lưu ý rằng chúng tôi sẽ sử dụng **providerInfo** để giữ thông tin liên quan đến nhà cung cấp dòng thời gian và hiển thị thông tin đó trên tiện ích - sẽ nói thêm về điều đó sau.
 
