@@ -74,36 +74,26 @@ struct SimpleEntry: TimelineEntry {
 struct WidgetExtensionEntryView : View {
     var entry: Provider.Entry
 
-        var body: some View {
-            ZStack {
-                if let imageUrl = URL(string: entry.text) {
-                    GeometryReader { geo in
-                        URLImage(imageUrl) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: geo.size.width,height: geo.size.height,alignment: .center)
-                                .clipped()
-                        }
-                    }
-                    .onAppear {
-                        print("ContentView imageUrl: \(entry.text)")
-                    }
+    var body: some View {
+        ZStack {
+            if let imageUrl = URL(string: entry.text) {
+                if let imageData = try? Data(contentsOf: imageUrl),
+                   let uiImage = UIImage(data: imageData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
                 } else {
-                    Text("Invalid URL")
+                    Text("Invalid Image URL")
                 }
+            } else {
+                Text("Invalid URL")
             }
         }
+    }
+
+
      
-//    var body: some View {
-//            if let image = UIImage(contentsOfFile: entry.text) {
-//                Image(uiImage: image)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//            } else {
-//                Text("Invalid Image")
-//            }
-//        }
+
 }
 
 struct WidgetExtension: Widget {
