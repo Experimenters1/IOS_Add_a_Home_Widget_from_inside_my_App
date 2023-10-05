@@ -2,6 +2,7 @@
 
 ## [IOS: Add a Home Widget from inside my App](https://stackoverflow.com/questions/72560997/ios-add-a-home-widget-from-inside-my-app) <br><br>
 ## [How To Add Widget In Storyboard Type In XCode, Swift5 project](https://stackoverflow.com/questions/75819852/how-to-add-widget-in-storyboard-type-in-xcode-swift5-project) <br><br>
+## [iOS WidgetKit: remote images fails to load](https://stackoverflow.com/questions/63086029/ios-widgetkit-remote-images-fails-to-load) <br><br>
 #
 
 ### Cách sử dụng biểu tượng cảm xúc (emoji) trên MacBook siêu đơn giản (emoji text agin)
