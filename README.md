@@ -282,3 +282,11 @@ struct WidgetExtension: Widget {
     }
 }
 ```
+```swift
+
+//                    optionalString = "https://file.hstatic.net/200000547241/file/1luffy_6c8b23a6cf254b9ab6ab5221f79db57a_grande.png"
+//                    optionalString = "https://inkythuatso.com/uploads/thumbnails/800/2022/03/2665651-15-15-34-30.jpg"
+//                    optionalString = "https://gamek.mediacdn.vn/133514250583805952/2022/5/18/photo-1-16528608926331302726659.jpg"
+                    optionalString = "https://anime.atsit.in/l/wp-content/uploads/2023/06/one-piece-sap-ra-mat-som-cho-gear-5-trong-2-tap.jpg"
+```
+
