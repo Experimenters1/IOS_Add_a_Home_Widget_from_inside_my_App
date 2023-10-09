@@ -256,6 +256,8 @@ struct Provider: IntentTimelineProvider {
 ```
 ### The Widget Configuration (Cấu hình tiện ích)
 
+![Screenshot 2023-10-09 at 9 16 22 AM](https://github.com/Experimenters1/IOS_Add_a_Home_Widget_from_inside_my_App/assets/64000769/e4b7697d-2691-4fee-9291-c015350c5d35)
+
 ```swift
 struct WidgetExtension: Widget {
     let kind: String = "WidgetExtension"
