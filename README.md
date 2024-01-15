@@ -116,7 +116,8 @@ struct SimpleEntry: TimelineEntry {
 }
 
 ```
-Lưu ý rằng chúng tôi sẽ sử dụng **providerInfo** để giữ thông tin liên quan đến nhà cung cấp dòng thời gian và hiển thị thông tin đó trên tiện ích - sẽ nói thêm về điều đó sau.
+Lưu ý rằng chúng tôi sẽ sử dụng **providerInfo** để giữ thông tin liên quan đến nhà cung cấp dòng thời gian và hiển thị thông tin đó trên tiện ích - sẽ nói thêm về điều đó sau.<br><br>
+**SimpleEntry** là một cấu trúc tuân theo giao thức **TimelineEntry**. Nó đại diện cho một mục nhập duy nhất trong dòng thời gian của **widget**, giữ ngày và cấu hình.<br><br>
 
 ### The Widget View  (Chế độ xem tiện ích)
 
