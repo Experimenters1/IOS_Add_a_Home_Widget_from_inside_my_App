@@ -198,63 +198,37 @@ struct MonthlyWidgetEntryView : View {
 ### The Timeline Provider (Nhà cung cấp dòng thời gian)
 
 ```swift
-struct Provider: IntentTimelineProvider {
+struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
-        completion(entry)
+    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
+        SimpleEntry(date: Date(), configuration: configuration)
     }
-
-//    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-//        var entries: [SimpleEntry] = []
-//
-//        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//        let currentDate = Date()
-//        for hourOffset in 0 ..< 5 {
-//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-//            entries.append(entry)
-//        }
-//
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
-//    }
     
-//    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-//            var entries: [SimpleEntry] = []
-//
-//            // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//            let currentDate = Date()
-//            for hourOffset in 0 ..< 5 {
-//                let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//                let entry = SimpleEntry(date: entryDate, configuration: configuration)
-//                entries.append(entry)
-//            }
-//
-//            let timeline = Timeline(entries: entries, policy: .atEnd)
-//            completion(timeline)
-//        }
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         var entries: [SimpleEntry] = []
 
-        // Tạo một Timer để cập nhật dữ liệu mỗi phút
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
-            let currentDate = Date()
-            let entry = SimpleEntry(date: currentDate, configuration: configuration)
+        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        let currentDate = Date()
+        for hourOffset in 0 ..< 5 {
+            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+            let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
-
-            // Tạo một Timeline với mục mới nhất
-            let timeline = Timeline(entries: entries, policy: .atEnd)
-            completion(timeline)
         }
-    }
 
+        return Timeline(entries: entries, policy: .atEnd)
+    }
 }
 
 ```
+**Cấu Trúc Provider**<br><br>
+   **Provider** là một cấu trúc tuân theo giao thức  **AppIntentTimelineProvider**, được sử dụng để định nghĩa nội dung và hành vi của  **widget**.<br><br>
++)  **placeholder(in:)** cung cấp một bản xem trước của  **widget** khi nó đang được cấu hình.
++)  **snapshot(for:in:)** cung cấp một cái nhìn nhanh về **widget**, thường được sử dụng trong bộ sưu tập **widget.**
++)  **timeline(for:in:)** định nghĩa nội dung thực tế của **widget** theo thời gian. Trong trường hợp này, nó tạo ra năm mục nhập, mỗi mục cách nhau một giờ.
+
 ### The Widget Configuration (Cấu hình tiện ích)
 
 ![Screenshot 2023-10-09 at 9 16 22 AM](https://github.com/Experimenters1/IOS_Add_a_Home_Widget_from_inside_my_App/assets/64000769/e4b7697d-2691-4fee-9291-c015350c5d35)
