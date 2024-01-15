@@ -225,9 +225,9 @@ struct Provider: AppIntentTimelineProvider {
 ```
 **Cấu Trúc Provider**<br><br>
    **Provider** là một cấu trúc tuân theo giao thức  **AppIntentTimelineProvider**, được sử dụng để định nghĩa nội dung và hành vi của  **widget**.<br><br>
-+)  **placeholder(in:)** cung cấp một bản xem trước của  **widget** khi nó đang được cấu hình.
-+)  **snapshot(for:in:)** cung cấp một cái nhìn nhanh về **widget**, thường được sử dụng trong bộ sưu tập **widget.**
-+)  **timeline(for:in:)** định nghĩa nội dung thực tế của **widget** theo thời gian. Trong trường hợp này, nó tạo ra năm mục nhập, mỗi mục cách nhau một giờ.
++)  **placeholder(in:)** cung cấp một bản xem trước của  **widget** khi nó đang được cấu hình.<br><br>
++)  **snapshot(for:in:)** cung cấp một cái nhìn nhanh về **widget**, thường được sử dụng trong bộ sưu tập **widget.** <br><br>
++)  **timeline(for:in:)** định nghĩa nội dung thực tế của **widget** theo thời gian. Trong trường hợp này, nó tạo ra năm mục nhập, mỗi mục cách nhau một giờ.<br><br>
 
 ### The Widget Configuration (Cấu hình tiện ích)
 
