@@ -259,3 +259,14 @@ NotificationCenter.default.post(name: notificationName, object: nil)
 Sau đó, trong widget, bạn lắng nghe thông báo này và cập nhật dữ liệu tương ứng.<br><br>
 
 Mỗi phương thức này đều có các ứng dụng và tác dụng cụ thể trong quá trình phát triển widget, giúp bạn quản lý cách widget của mình hiển thị và cập nhật dữ liệu.<br><br>
+
+###
+## Swift được sử dụng để cập nhật dữ liệu hiển thị trên các widget, nhưng chúng phục vụ cho mục đích khác nhau:<br><br>
+**1.WidgetCenter.shared.reloadAllTimelines():** Phương thức này yêu cầu hệ thống tải lại dòng thời gian cho **tất cả** các **widget** mà ứng dụng cung cấp. Khi sử dụng phương thức này, mọi widget của ứng dụng bạn, không phụ thuộc vào loại widget, sẽ được yêu cầu cập nhật. Điều này hữu ích khi có một thay đổi lớn ảnh hưởng đến toàn bộ widget của ứng dụng.<br><br>
+
+**2.WidgetCenter.shared.reloadTimelines(ofKind: "MyWidgetKind"):** Trong khi đó, phương thức này chỉ yêu cầu tải lại dòng thời gian cho các widget của một loại cụ thể, được xác định bởi tham số truyền vào. Trong trường hợp này, chỉ những widget thuộc loại **"MyWidgetKind"** sẽ được cập nhật. Điều này hữu ích khi bạn chỉ muốn cập nhật một nhóm widget cụ thể mà không ảnh hưởng đến các widget khác của ứng dụng.<br><br>
+###
+
+
+
+
