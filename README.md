@@ -228,4 +228,34 @@ struct WidgetExtension: Widget {
 //                    optionalString = "https://gamek.mediacdn.vn/133514250583805952/2022/5/18/photo-1-16528608926331302726659.jpg"
                     optionalString = "https://anime.atsit.in/l/wp-content/uploads/2023/06/one-piece-sap-ra-mat-som-cho-gear-5-trong-2-tap.jpg"
 ```
+#####
+### Có một số câu lệnh khác có thể hữu ích trong việc quản lý cách widgets của bạn cập nhật và hiển thị dữ liệu:<br><br>
+**1.WidgetCenter.shared.reloadTimelines(ofKind:):** Phương thức này tải lại dòng thời gian cho các widget của một loại cụ thể. Điều này hữu ích nếu bạn có nhiều loại widget khác nhau và chỉ muốn cập nhật một loại nhất định.<br><br>
+```swift
+WidgetCenter.shared.reloadTimelines(ofKind: "MyWidgetKind")
+```
+Trong đó **"MyWidgetKind"** là loại của widget bạn muốn cập nhật.<br><br>
+**2.WidgetCenter.shared.getCurrentConfigurations(completion:):** Phương thức này lấy thông tin cấu hình hiện tại của tất cả các widget được cài đặt. Nó có thể hữu ích để xác định widget nào đang được sử dụng và cách chúng được cấu hình.<br><br>
 
+```swift
+WidgetCenter.shared.getCurrentConfigurations { result in
+    switch result {
+    case .success(let configurations):
+        for config in configurations {
+            print("Widget of kind: \(config.kind)")
+        }
+    case .failure(let error):
+        print("Error fetching configurations: \(error)")
+    }
+}
+```
+**3.NotificationCenter.default.post(name:notificationName, object: nil):**  Đôi khi bạn có thể muốn sử dụng **NotificationCenter** để gửi thông báo từ ứng dụng của mình tới widget, điều này có thể kích hoạt cập nhật trong widget.<br><br>
+
+```swift
+let notificationName = Notification.Name("MyAppWidgetUpdate")
+NotificationCenter.default.post(name: notificationName, object: nil)
+```
+
+Sau đó, trong widget, bạn lắng nghe thông báo này và cập nhật dữ liệu tương ứng.<br><br>
+
+Mỗi phương thức này đều có các ứng dụng và tác dụng cụ thể trong quá trình phát triển widget, giúp bạn quản lý cách widget của mình hiển thị và cập nhật dữ liệu.<br><br>
