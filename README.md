@@ -267,6 +267,28 @@ Mỗi phương thức này đều có các ứng dụng và tác dụng cụ th�
 **2.WidgetCenter.shared.reloadTimelines(ofKind: "MyWidgetKind"):** Trong khi đó, phương thức này chỉ yêu cầu tải lại dòng thời gian cho các widget của một loại cụ thể, được xác định bởi tham số truyền vào. Trong trường hợp này, chỉ những widget thuộc loại **"MyWidgetKind"** sẽ được cập nhật. Điều này hữu ích khi bạn chỉ muốn cập nhật một nhóm widget cụ thể mà không ảnh hưởng đến các widget khác của ứng dụng.<br><br>
 ###
 
+### Một hàm có tên timeline để tạo ra một dòng thời gian của các mục widget : <br><br>
+
+**Tạo ra các Mục Dòng Thời gian:**<br><br>
+Lấy ngày giờ hiện tại:<br><br>
+```swift
+let currentDate = Date()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
