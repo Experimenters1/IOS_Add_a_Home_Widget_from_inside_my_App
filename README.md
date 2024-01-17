@@ -309,7 +309,7 @@ Trong đoạn mã trên:<br><br>
 
 +) Mỗi **entryDate** được tạo ra sau đó được sử dụng để tạo một **SimpleEntry** mới, và mục này được thêm vào mảng **entries**.<br><br>
 
-+) Như đã đề cập trước đó, hãy lưu ý rằng việc cập nhật widget mỗi 25 giây có thể không phải là lựa chọn hiệu quả về mặt năng lượng và có thể không phù hợp với hầu hết các trường hợp sử dụng. Hãy cân nhắc kỹ lưỡng trước khi triển khai tính năng này.<br><br>
+==> Như đã đề cập trước đó, hãy lưu ý rằng việc cập nhật widget mỗi 25 giây có thể không phải là lựa chọn hiệu quả về mặt năng lượng và có thể không phù hợp với hầu hết các trường hợp sử dụng. Hãy cân nhắc kỹ lưỡng trước khi triển khai tính năng này.<br><br>
 
 
 
