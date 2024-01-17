@@ -277,17 +277,39 @@ let currentDate = Date()
 ```
 Để cập nhật đoạn code sao cho mỗi phút nó cập nhật thời gian một lần, bạn cần thay đổi phần lặp for để thay vì tạo một mục cho mỗi giờ, nó sẽ tạo một mục cho mỗi phút. Cụ thể, thay vì sử dụng **.hour** trong phương thức **Calendar.current.date(byAdding:value:to:)**, bạn sẽ sử dụng .minute. Và thay vì lặp từ **0 ..< 5 (để tạo ra 5 mục, mỗi mục cách nhau 1 giờ)**, bạn sẽ muốn lặp một số lần tương ứng với số phút bạn muốn **(ví dụ, 60 lần cho 1 giờ)**.<br><br>
 
+```swift
+for minuteOffset in 0 ..< 60 { // Loop for 60 minutes
+    let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
+    let entry = SimpleEntry(date: entryDate, configuration: configuration, text: "")
+    entries.append(entry)
+}
 
+return Timeline(entries: entries, policy: .atEnd)
 
+```
 
+Để thực hiện cập nhật mỗi **25 giây**, bạn sẽ cần sửa đổi đoạn code để sử dụng khoảng thời gian **25 giây** thay vì một phút. Điều này có thể được thực hiện bằng cách sử dụng .second với giá trị là **25** trong phương thức **Calendar.current.date(byAdding:value:to:).**<br><br>
 
+```swift
+for secondOffset in stride(from: 0, to: 3600, by: 25) { // Loop for 3600 seconds (1 hour), updating every 25 seconds
+    let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
+    let entry = SimpleEntry(date: entryDate, configuration: configuration, text: "")
+    entries.append(entry)
+}
 
+return Timeline(entries: entries, policy: .atEnd)
 
+```
 
+Trong đoạn mã trên:<br><br>
 
++) **stride(from:to:by:)** được sử dụng để tạo một chuỗi số từ 0 đến 3600 (số giây trong một giờ) với mỗi bước nhảy là 25 (tức cứ sau mỗi 25 giây).<br><br>
 
++) **Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!** sẽ tạo ra một ngày mới với khoảng thời gian cách **currentDate** một số giây tương ứng với **secondOffset**.<br><br>
 
++) Mỗi **entryDate** được tạo ra sau đó được sử dụng để tạo một **SimpleEntry** mới, và mục này được thêm vào mảng **entries**.<br><br>
 
++) Như đã đề cập trước đó, hãy lưu ý rằng việc cập nhật widget mỗi 25 giây có thể không phải là lựa chọn hiệu quả về mặt năng lượng và có thể không phù hợp với hầu hết các trường hợp sử dụng. Hãy cân nhắc kỹ lưỡng trước khi triển khai tính năng này.<br><br>
 
 
 
