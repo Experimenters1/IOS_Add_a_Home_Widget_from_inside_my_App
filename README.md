@@ -275,6 +275,8 @@ Lấy ngày giờ hiện tại:<br><br>
 let currentDate = Date()
 
 ```
+Để cập nhật đoạn code sao cho mỗi phút nó cập nhật thời gian một lần, bạn cần thay đổi phần lặp for để thay vì tạo một mục cho mỗi giờ, nó sẽ tạo một mục cho mỗi phút. Cụ thể, thay vì sử dụng **.hour** trong phương thức **Calendar.current.date(byAdding:value:to:)**, bạn sẽ sử dụng .minute. Và thay vì lặp từ **0 ..< 5 (để tạo ra 5 mục, mỗi mục cách nhau 1 giờ)**, bạn sẽ muốn lặp một số lần tương ứng với số phút bạn muốn **(ví dụ, 60 lần cho 1 giờ)**.<br><br>
+
 
 
 
