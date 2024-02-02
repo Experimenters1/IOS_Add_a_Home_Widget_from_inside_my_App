@@ -311,8 +311,10 @@ Trong đoạn mã trên:<br><br>
 
 ==> Như đã đề cập trước đó, hãy lưu ý rằng việc cập nhật widget mỗi 25 giây có thể không phải là lựa chọn hiệu quả về mặt năng lượng và có thể không phù hợp với hầu hết các trường hợp sử dụng. Hãy cân nhắc kỹ lưỡng trước khi triển khai tính năng này.<br><br>
 
-
-
-
+[SwiftUI 3.0 Fetching Data From Firebase in Widgets - Cross App Authentication - Key Chain Sharing](https://www.youtube.com/watch?v=3t67GWZJHSQ) <br><br>
+[iOS 14 WidgetKit | Building COVID-19 API Stats Widget | Static Configuration | SwiftUI](https://www.youtube.com/watch?v=5gj0OzknhMw) <br><br>
+[SwiftUI WidgetKit Tutorials - Creating Widget And Displaying Data Parsed From JSON API - SwiftUI](https://www.youtube.com/watch?v=vMciaDT1Tos&t=84s) <br><br>
+[Create your first Lockscreen Widget | iOS 16 WidgetKit Tutorial](https://www.youtube.com/watch?v=RV401bUfCck) <br><br>
+[Share CoreData with Widget Extension](https://www.youtube.com/watch?v=FV_3kiRF90g&t=491s) <br><br>
 
 
