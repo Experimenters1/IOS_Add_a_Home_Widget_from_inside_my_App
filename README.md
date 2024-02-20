@@ -1,6 +1,7 @@
 # IOS_Add_a_Home_Widget_from_inside_my_App
 
 ## [SwiftUI 3.0 Fetching Data From Firebase in Widgets - Cross App Authentication - Key Chain Sharing[9:56 / 14:12]](https://www.youtube.com/watch?v=3t67GWZJHSQ) <br><br>
+## [Complete SwiftUI Firebase Tutorial: Auth, Sign Up Page, Cloud Firestore, Read & Write Data](https://www.youtube.com/watch?v=6b2WAePdiqA) <br><br>
 ## [Enabling cross-app authentication with shared Apple Keychain](https://firebase.google.com/docs/auth/ios/single-sign-on) <br><br>
 ###
 ###  <br><br><br><br>
